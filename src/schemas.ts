@@ -32,6 +32,26 @@ export const CouponResponseSchema = z.object({
     message:z.string(),
     porcentage:z.coerce.number().min(0).max(100).default(0)
 })
+const OrderContentSchema = z.object({
+  productId: z.number(),
+  quantity: z.number(),
+  price: z.number()
+})
+export const OrderSchema = z.object({
+  total: z.number(),
+  coupon: z.string(),
+  contents: z.array(OrderContentSchema).min(1, {message: 'The cart cannot be empty'})
+})
+
+/** Success / Error Response */
+export const SuccessResponseSchema = z.object({
+  message: z.string()
+})
+export const ErrorResponseSchema = z.object({
+  message: z.array(z.string()),
+  error: z.string(),
+  statusCode: z.number()
+})
 //tytpes
 export type CartItem = z.infer<typeof ShoppingCartContentSchema>
 export type SchoppingCart=z.infer<typeof ShoppingCartSchema>

@@ -3,6 +3,7 @@ import { UseStore } from "@/src/store";
 import ShoppingCartItem from "./SchoppingCartItem";
 import Amount from "./Amount";
 import CouponForm from "./CouponForm";
+import SubmitOrderForm from "./SubmitOrderForm";
 export default function SchoppingCard() {
   const contents = UseStore((state) => state.contents);
   const total = UseStore((state) => state.total);
@@ -28,6 +29,7 @@ export default function SchoppingCard() {
             <Amount label="Total" amount={total} />
           </dl>
           <CouponForm/>
+          <SubmitOrderForm/>
         </>
       ) : (
         <p className="text-2xl  text-center text-gray-900">Empty Cart</p>

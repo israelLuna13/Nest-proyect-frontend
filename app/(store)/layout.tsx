@@ -1,5 +1,6 @@
 import SchoppingCard from "@/components/card/SchoppingCard";
 import MainNav from "@/components/UI/MainNav";
+import ToastNotification from "@/components/UI/ToastNotification";
 
 export default function RootLayout({
   children,
@@ -18,6 +19,7 @@ export default function RootLayout({
        <SchoppingCard/>
           </aside>
       </main>
+      <ToastNotification/>
     </>
   );
 }
