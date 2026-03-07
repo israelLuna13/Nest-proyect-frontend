@@ -52,8 +52,26 @@ export const ErrorResponseSchema = z.object({
   error: z.string(),
   statusCode: z.number()
 })
+
+export const ContentsSchema = z.object({
+    id: z.number(),
+    quantity: z.number(),
+    price: z.string(),
+    product: ProductSchema
+  })
+  export const TransactionResponseSchema = z.object({
+    id: z.number(),
+    total: z.string(),
+    transactionDate: z.string(),
+    discount: z.string().nullable(),
+    coupon: z.string().nullable(),
+    contents: z.array(ContentsSchema)
+  })
+  
+  export const TransactionsResponseSchema = z.array(TransactionResponseSchema)
 //tytpes
 export type CartItem = z.infer<typeof ShoppingCartContentSchema>
 export type SchoppingCart=z.infer<typeof ShoppingCartSchema>
 export type Product = z.infer<typeof ProductSchema>
 export type Coupon = z.infer<typeof CouponResponseSchema>
+export type Transaction = z.infer<typeof TransactionResponseSchema>

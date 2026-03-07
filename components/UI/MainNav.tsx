@@ -16,16 +16,27 @@ export default async function MainNav() {
     
   return (
     <header className="px-10 py-5 bg-gray-700 flex flex-col md:flex-row justify-between ">
-        <div className="flex justify-center">
-            <Logo/>
+      <div className="flex justify-center">
+        <Logo />
+      </div>
 
-        </div>
-
-        <nav className="flex flex-col md:flex-row gap-2 items-center mt-5 md:mt-0">
-            {categorys.map(category=>(
-                <Link key={category.id} href={`/${category.id}`} className="text-white hover:text-green-400 font-bold p-2">{category.name}</Link>
-            ))}
-        </nav>
+      <nav className="flex flex-col md:flex-row gap-2 items-center mt-5 md:mt-0">
+        {categorys.map((category) => (
+          <Link
+            key={category.id}
+            href={`/${category.id}`}
+            className="text-white hover:text-green-400 font-bold p-2"
+          >
+            {category.name}
+          </Link>
+        ))}
+      </nav>
+      <Link
+        href={"/admin/sales/"}
+        className=" bg-green-500 font-bold px-10 py-2"
+      >
+        Administration panel
+      </Link>
     </header>
-  )
+  );
 }
