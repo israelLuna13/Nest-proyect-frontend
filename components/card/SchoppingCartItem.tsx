@@ -1,7 +1,7 @@
 "use client"
 import { CartItem } from "@/src/schemas";
 import { UseStore } from "@/src/store";
-import { formatCurrency } from "@/src/utils";
+import { formatCurrency, getImagePath } from "@/src/utils";
 import Image from "next/image";
 
 export default function ShoppingCartItem({ item }: { item: CartItem }) {
@@ -12,7 +12,7 @@ export default function ShoppingCartItem({ item }: { item: CartItem }) {
       <div className="h-24 w-24">
         {/* I HAVE TO USE NEXT_API_URL 'CAUSE IT RUNS IN THE CLIENT, IN THE SERVER IS ONLY API_URL*/}
         <Image
-          src={`${process.env.NEXT_PUBLIC_API_URL}/img/${item.image}`}
+          src={getImagePath(item.image)}
           alt={`Product image ${item.image}`}
           width={100}
           height={100}
