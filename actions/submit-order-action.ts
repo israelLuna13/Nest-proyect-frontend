@@ -8,7 +8,6 @@ import {
 import { revalidatePath} from "next/cache";
 
 export async function submitOrder(data: unknown) {
-  console.log(data);
   
   const order = OrderSchema.parse(data);
   const url = `${process.env.API_URL}/transtactions`;

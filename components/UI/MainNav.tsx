@@ -2,6 +2,7 @@
 import { CategoriesResponseSchema } from "@/src/schemas";
 import Logo from "./Logo";
 import Link from "next/link";
+import MenuSort from "./MenuSort"
 async function getCategorys(){
     const url =`${process.env.API_URL}/categories`
     const req = await fetch(url)
@@ -30,6 +31,7 @@ export default async function MainNav() {
             {category.name}
           </Link>
         ))}
+        <MenuSort/>
       </nav>
       <Link
         href={"/admin/sales/"}
