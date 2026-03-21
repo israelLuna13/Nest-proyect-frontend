@@ -5,11 +5,12 @@ import Pagination from "@/components/UI/Pagination";
 import { ProductsSchema } from "@/src/schemas";
 import { isValidPage } from "@/src/utils";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 async function getProducts(take: number, skip: number) {
   const url = `${process.env.API_URL}/products?take=${take}&skip=${skip}`;
   const req = await fetch(url);
   const json = await req.json();
+  if(!req.ok) notFound()
   const data = ProductsSchema.parse(json);
   return {
     products: data.products,
@@ -36,7 +37,7 @@ export default async function ProductsPage({searchParams,}: {searchParams: Searc
       >
         New Product
       </Link>
-      <Heading>Administrar Products</Heading>
+      <Heading>Manage Products</Heading>
 
       <ProductsTable products={products} />
       <Pagination

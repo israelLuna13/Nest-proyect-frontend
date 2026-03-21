@@ -1,7 +1,7 @@
 "use server";
 import { CategoryWithProductsResponseSchema } from "@/src/schemas";
 import ProductCard from "@/components/products/ProductCard";
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 // new mean to get params / params type
 type SearchParams=Promise<{
   key:string,
@@ -27,6 +27,8 @@ async function getProducts(categoryId: string, sort?:string, order?:string) {
   // })  
   const req = await fetch(url);
   const json = await req.json();
+ 
+  if(req.status === 404) notFound()
   
   if (!req.ok) {
     redirect("/1");

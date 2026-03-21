@@ -21,7 +21,7 @@ export default async function MainNav() {
         <Logo />
       </div>
 
-      <nav className="flex flex-col md:flex-row gap-2 items-center mt-5 md:mt-0">
+      <nav className="flex flex-col md:flex-row gap-2 items-center mt-5 md:mt-0 py-2">
         {categorys.map((category) => (
           <Link
             key={category.id}
@@ -35,9 +35,9 @@ export default async function MainNav() {
       </nav>
       <Link
         href={"/admin/sales/"}
-        className=" bg-green-500 font-bold px-10 py-2"
+        className=" bg-green-500 font-bold my-3 px-10 py-2"
       >
-        Administration panel
+        Panel Administrator
       </Link>
     </header>
   );

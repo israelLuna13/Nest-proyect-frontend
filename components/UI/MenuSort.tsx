@@ -14,7 +14,7 @@ export default function Example() {
   return (
     <>
     <Menu as="div" className="relative inline-block">
-      <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white inset-ring-1 inset-ring-white/5 hover:bg-white/20">
+      <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white/10 px-2 py-1 text-sm font-semibold text-white inset-ring-1 inset-ring-white/5 hover:bg-white/20">
         Sort
         <ChevronDownIcon aria-hidden="true" className="-mr-1 size-5 text-gray-400" />
       </MenuButton>
@@ -44,7 +44,7 @@ export default function Example() {
       </MenuItems>
     </Menu>
      <Menu as="div" className="relative inline-block">
-      <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white inset-ring-1 inset-ring-white/5 hover:bg-white/20">
+      <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white/10 px-2 py-1 text-sm font-semibold text-white inset-ring-1 inset-ring-white/5 hover:bg-white/20">
         Order
         <ChevronDownIcon aria-hidden="true" className="-mr-1 size-5 text-gray-400" />
       </MenuButton>

@@ -38,7 +38,7 @@ export default async function SalesPage() {
     <>
       <Heading>Sales</Heading>
       <p className="text-lg">
-        You can look at sales, You use calendar to filter sales
+        You can view  sales, You use calendar to filter them
       </p>
 
       {/* dehydrate extracts the cache from QueryClient and converts it into serializable JSON. */}
