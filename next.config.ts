@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
       // },
       {
         protocol: "https",
-        hostname:'nest-proyect.onrender.com'
+        hostname:"nest-proyect.onrender.com"
         //hostname: process.env.DOMAIN!,
       },
       {
